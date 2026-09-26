@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Abegail P. Zarate — BSIT Business Informatics student and aspiring Data Analyst."
+    >
+
+    <meta name="author" content="Abegail P. Zarate">
+
+    <title>Abegail P. Zarate's Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #017fe6;
+            --primary-dark: #006bc4;
+
+            --dark: #102033;
+            --text: #536273;
+            --muted: #718096;
+
+            --light: #f5f9fd;
+            --soft: #eaf5ff;
+            --white: #ffffff;
+
+            --border: #e2ebf3;
+
+            --shadow: 0 20px 50px rgba(0, 70, 130, 0.10);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: 8px 0;
+            color: #526170;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .resume-nav {
+            padding: 8px 14px !important;
+            border: 1px solid var(--primary);
+            border-radius: 7px;
+            color: var(--primary) !important;
+        }
+
+        .resume-nav:hover {
+            background: var(--primary);
+            color: var(--white) !important;
+        }
+
+        .resume-nav.active::after {
+            display: none;
+        }
+
+        .menu-btn {
+            display: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 75px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8fbff 0%,
+                    #ffffff 55%,
+                    #eef7ff 100%
+                );
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-text small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+            margin-bottom: 20px;
+
+            background: #e8f4ff;
+            color: var(--primary);
+
+            border-radius: 30px;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .hero-text small i {
+            font-size: 7px;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 12px;
+
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.05;
+            letter-spacing: -2.5px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            margin-bottom: 20px;
+
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            margin-bottom: 30px;
+
+            color: var(--text);
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: #eef7ff;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 315px;
+
+            padding: 25px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 190px;
+            height: 190px;
+
+            margin: 0 auto;
+
+            object-fit: cover;
+
+            border: 6px solid #e9f5ff;
+            border-radius: 50%;
+        }
+
+        .profile-card h3 {
+            margin-top: 18px;
+            font-size: 21px;
+        }
+
+        .profile-card p {
+            margin-top: 5px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin-top: 18px;
+        }
+
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f1f7fc;
+            color: var(--primary);
+
+            border-radius: 50%;
+
+            transition: 0.25s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 95px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            margin-top: 7px;
+
+            font-size: 35px;
+            letter-spacing: -0.7px;
+        }
+
+        .section-title p {
+            max-width: 680px;
+
+            margin: 11px auto 0;
+
+            color: var(--text);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text h3,
+        .education h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .about-text p {
+            margin-bottom: 14px;
+
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .education-item {
+            padding: 19px;
+            margin-bottom: 14px;
+
+            background: #fbfdff;
+
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+
+            border-radius: 10px;
+        }
+
+        .education-item h4 {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .education-item p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .education-item .year {
+            margin-bottom: 5px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        #skills {
+            background: var(--light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 25px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 70, 130, 0.08);
+        }
+
+        .skill-card:last-child {
+            grid-column: 1 / -1;
+            width: calc(50% - 10px);
+            justify-self: center;
+        }
+
+        .skill-icon {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            background: var(--soft);
+            color: var(--primary);
+
+            border-radius: 10px;
+
+            font-size: 19px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 13px;
+            font-size: 17px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .skill-tag {
+            padding: 6px 10px;
+
+            background: #f3f7fa;
+            color: #435363;
+
+            border: 1px solid #e3ebf1;
+            border-radius: 6px;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        #projects {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            overflow: hidden;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 15px;
+
+            transition: 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 70, 130, 0.10);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            background: #eaf4fb;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition: 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.04);
+        }
+
+        .project-content {
+            padding: 23px;
+        }
+
+        .project-category {
+            display: inline-block;
+
+            margin-bottom: 7px;
+
+            color: var(--primary);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-date {
+            margin-bottom: 7px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .project-content h3 {
+            margin-bottom: 5px;
+            font-size: 19px;
+        }
+
+        .project-role {
+            margin-bottom: 11px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .project-content p {
+            margin-bottom: 14px;
+
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .project-tech span {
+            padding: 5px 8px;
+
+            background: #eef7ff;
+            color: var(--primary);
+
+            border-radius: 5px;
+
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .project-card:last-child {
+            grid-column: 1 / -1;
+            width: calc(50% - 12px);
+            justify-self: center;
+        }
+
+
+        /* =========================
+           TRAINING
+        ========================= */
+
+        #training {
+            background: var(--light);
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: 0 auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 15px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: #d8eaf8;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 55px;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 7px;
+            top: 4px;
+
+            width: 18px;
+            height: 18px;
+
+            background: var(--primary);
+
+            border: 4px solid var(--white);
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 2px #d8eaf8;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 4px;
+            font-size: 18px;
+        }
+
+        .timeline-date {
+            margin-bottom: 7px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .timeline-item p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .contact-card {
+            padding: 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            text-align: center;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #bcdff8;
+
+            box-shadow: 0 12px 30px rgba(0, 70, 130, 0.08);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 13px;
+
+            background: var(--soft);
+            color: var(--primary);
+
+            border-radius: 50%;
+
+            font-size: 19px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .contact-card p {
+            color: var(--text);
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 28px 0;
+
+            background: #0d1d2d;
+            color: var(--white);
+
+            text-align: center;
+        }
+
+        footer p {
+            color: #aebdcc;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 45px;
+
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card:last-child {
+                grid-column: auto;
+                width: 100%;
+                justify-self: stretch;
+            }
+
+            .project-card:last-child {
+                grid-column: auto;
+                width: 100%;
+                justify-self: stretch;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+                align-items: center;
+
+                gap: 0;
+
+                padding: 7px 0 12px;
+
+                background: var(--white);
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px;
+            }
+
+            .nav-links a.active::after {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card:last-child {
+                grid-column: auto;
+                width: 100%;
+                justify-self: stretch;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .hero-text h1 {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .profile-card {
+                width: 280px;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+        }
+
+
+        /* =========================
+           ACCESSIBILITY
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+                animation: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header>
+        <div class="container">
+
+            <nav>
+
+                <a href="#home" class="logo">
+                    APZ
+                </a>
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a href="#home" class="active">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#training">Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Abegail Zarate_CV.pdf"
+                            target="_blank"
+                            rel="noopener"
+                            class="resume-nav"
+                        >
+                            Curriculum Vitae
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div
+                    class="menu-btn"
+                    id="menuBtn"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bars"></i>
+                </div>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HOME
+        ========================= -->
+
+        <section id="home" class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="hero-text reveal">
+
+                        <small>
+                            <i class="fas fa-circle"></i>
+                            Open to Internship Opportunities
+                        </small>
+
+                        <h1>
+                            Hi, I'm <span>Abegail.</span>
+                        </h1>
+
+                        <div class="hero-subtitle">
+                            IT Student | Aspiring Data Analyst
+                        </div>
+
+                        <p>
+                            Fourth-year BSIT student majoring in Business Informatics
+                            with a strong interest in data analytics and technology.
+                            I enjoy cleaning and analyzing data, building dashboards,
+                            and turning data into meaningful insights.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="#projects" class="btn btn-primary">
+                                <i class="fas fa-folder-open"></i>
+                                View Projects
+                            </a>
+
+                            <a
+                                href="Abegail Zarate_CV.pdf"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-outline"
+                            >
+                                <i class="fas fa-file-pdf"></i>
+                                View CV
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-wrapper reveal">
+
+                        <div class="profile-card">
+
+                            <img
+                                src="formal-pic.png"
+                                alt="Abegail P. Zarate"
+                                class="profile-image"
+                            >
+
+                            <h3>
+                                Abegail P. Zarate
+                            </h3>
+
+                            <p>
+                                BSIT Business Informatics
+                                <br>
+                                Aspiring Data Analyst
+                            </p>
+
+                            <div class="social-icons">
+
+                                <!-- LINKEDIN -->
+                                <a
+                                    href="https://www.linkedin.com/in/abegail-zarate/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    title="LinkedIn"
+                                    aria-label="LinkedIn"
+                                >
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+
+                                <!-- GITHUB -->
+                                <a
+                                    href="https://github.com/abegailzarate"
+                                    target="_blank"
+                                    rel="noopener"
+                                    title="GitHub"
+                                    aria-label="GitHub"
+                                >
+                                    <i class="fab fa-github"></i>
+                                </a>
+
+                                <!-- EMAIL -->
+                                <a
+                                    href="mailto:abegail.p.zarate@gmail.com"
+                                    title="Email"
+                                    aria-label="Email"
+                                >
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about" class="reveal">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>About Me</span>
+
+                    <h2>
+                        Who I Am
+                    </h2>
+
+                    <p>
+                        Business Informatics student building practical skills
+                        in data, analytics, databases, cloud and technology.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <h3>
+                            Profile
+                        </h3>
+
+                       <p>
+                            I am a fourth-year Bachelor of Science in Information Technology student 
+                            majoring in Business Informatics at PHINMA – University of Pangasinan,
+                            with a strong interest in data analytics, business intelligence, 
+                            and technology-driven solutions.
+                        </p>
+
+                        <p>
+                            I have developed practical skills in Microsoft Excel,
+                            Power Query, Power BI, SQL, data cleaning,
+                            data visualization, and statistical analysis 
+                            through academic and personal projects. I also have experience in database development, 
+                            front-end development, and UI/UX design using Figma.
+                        </p>
+
+                        <p>
+                           I enjoy working with data, transforming information into meaningful insights, 
+                           and creating technology solutions that address practical business needs.
+                            I am continuously expanding my technical skills and seeking opportunities 
+                            to gain real-world experience while growing as an IT and data professional.
+                        <p>
+                        </p>
+
+
+                    </div>
+
+
+                    <div class="education">
+
+                        <h3>
+                            Education
+                        </h3>
+
+
+                        <div class="education-item">
+
+                            <div class="year">
+                                2023 – Present
+                            </div>
+
+                            <h4>
+                                Bachelor of Science in Information Technology
+                            </h4>
+
+                            <p>
+                                Major in Business Informatics
+                            </p>
+
+                            <p>
+                                PHINMA – University of Pangasinan
+                            </p>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="year">
+                                2020 – 2022
+                            </div>
+
+                            <h4>
+                                Accountancy, Business and Management
+                            </h4>
+
+                            <p>
+                                Virgen Milagrosa University Foundation
+                            </p>
+
+                            <p>
+                                With Honors
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section id="skills" class="reveal">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        Technical Skills
+                    </span>
+
+                    <h2>
+                        Skills & Tools
+                    </h2>
+
+                    <p>
+                        Technical skills developed through academic projects,
+                        hands-on practice, and software development experience.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- DATA & ANALYTICS -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-column"></i>
+                        </div>
+
+                        <h3>
+                            Data & Analytics
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill-tag">
+                                Microsoft Excel
+                            </span>
+
+                            <span class="skill-tag">
+                                PivotTables
+                            </span>
+
+                            <span class="skill-tag">
+                                Power Query
+                            </span>
+
+                            <span class="skill-tag">
+                                Power Pivot
+                            </span>
+
+                            <span class="skill-tag">
+                                Power BI
+                            </span>
+
+                            <span class="skill-tag">
+                                DAX
+                            </span>
+
+                            <span class="skill-tag">
+                                SQL
+                            </span>
+
+                            <span class="skill-tag">
+                                Data Cleaning
+                            </span>
+
+                            <span class="skill-tag">
+                                Data Visualization
+                            </span>
+
+                            <span class="skill-tag">
+                                Statistical Analysis
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROGRAMMING -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+
+                        <h3>
+                            Programming & Web
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill-tag">
+                                Python
+                            </span>
+
+                            <span class="skill-tag">
+                                JavaScript
+                            </span>
+
+                            <span class="skill-tag">
+                                HTML
+                            </span>
+
+                            <span class="skill-tag">
+                                CSS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATABASE -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+
+                        <h3>
+                            Databases & Cloud
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill-tag">
+                                MySQL
+                            </span>
+
+                            <span class="skill-tag">
+                                MongoDB
+                            </span>
+
+                            <span class="skill-tag">
+                                MongoDB Atlas
+                            </span>
+
+                            <span class="skill-tag">
+                                AWS Fundamentals
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOOLS -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+
+                        <h3>
+                            Tools & Platforms
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill-tag">
+                                GitHub
+                            </span>
+
+                            <span class="skill-tag">
+                                Figma
+                            </span>
+
+                            <span class="skill-tag">
+                                Visual Studio Code
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFESSIONAL -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+
+                        <h3>
+                            Professional Skills
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span class="skill-tag">
+                                Analytical Thinking
+                            </span>
+
+                            <span class="skill-tag">
+                                Problem Solving
+                            </span>
+
+                            <span class="skill-tag">
+                                Attention to Detail
+                            </span>
+
+                            <span class="skill-tag">
+                                Teamwork
+                            </span>
+
+                            <span class="skill-tag">
+                                Adaptability
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <section id="projects" class="reveal">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        Projects
+                    </span>
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+                    <p>
+                        Selected academic projects demonstrating experience
+                        in data analytics, dashboards, databases, software
+                        development, and UI/UX.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="ezgif.com-video-to-gif-converter.gif"
+                                alt="Data and Tech Job Market Analysis dashboard"
+                            >
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-category">
+                                Data Analytics
+                            </div>
+
+                            <div class="project-date">
+                                AUGUST 2026
+                            </div>
+
+                            <h3>
+                                Data & Tech Job Market Analysis
+                            </h3>
+
+                            <div class="project-role">
+                                Data Analyst
+                            </div>
+
+                            <p>
+                                Analyzed job market data to identify trends in job demand, salaries, companies, employment types, and work arrangements. Applied Excel formulas and data cleaning techniques, and developed an interactive dashboard using Microsoft Excel to visualize key findings and present actionable insights.
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span>
+                                    Excel
+                                </span>
+
+                                <span>
+                                    Data Validation
+                                </span>
+
+                                <span>
+                                    Statistical Analysis
+                                </span>
+
+                                <span>
+                                    Dashboard
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="images/sleep-analysis.png"
+                                alt="Residential Distance and Students Sleep Hours Analysis"
+                            >
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-category">
+                                Data Analytics
+                            </div>
+
+                            <div class="project-date">
+                                MARCH 2026
+                            </div>
+
+                            <h3>
+                                Residential Distance & Students' Sleep Hours
+                            </h3>
+
+                            <div class="project-role">
+                                Data Analyst
+                            </div>
+
+                            <p>
+                                Collected and analyzed survey data on residential distance and students’ sleep hours. Cleaned the dataset, applied statistical analysis, and developed an interactive dashboard to visualize key findings and insights.
+                            </p>
+
+
+
+
+                            <div class="project-tech">
+
+                                <span>
+                                    Excel
+                                </span>
+
+                                <span>
+                                    Power Query
+                                </span>
+
+                                <span>
+                                    PowerBI
+                                </span>
+
+                                <span>
+                                    Statistics
+                                </span>
+
+                                <span>
+                                    Correlation
+                                </span>
+
+                                <span>
+                                    Regression
+                                </span>
+
+                                <span>
+                                    Dashboard
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="rentifypro.png"
+                                alt="RentifyPro vehicle rental system"
+                            >
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-category">
+                                Web Development
+                            </div>
+
+                            <div class="project-date">
+                                MARCH 2026
+                            </div>
+
+                            <h3>
+                                RentifyPro
+                            </h3>
+
+                            <div class="project-role">
+                                UI/UX Designer | Front-end Developer | System Analyst
+                            </div>
+
+                            <p>
+                                Developed a peer-to-peer vehicle rental system
+                                as a capstone project. Contributed to UI/UX
+                                design and front-end development for vehicle
+                                browsing, booking, owner verification, payment,
+                                and rental management workflows.
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>
+                                    React
+                                </span>
+
+                                <span>
+                                    Vite
+                                </span>
+
+                                <span>
+                                    Tailwind CSS
+                                </span>
+
+                                <span>
+                                    JavaScript
+                                </span>
+
+                                <span>
+                                    Node.js
+                                </span>
+
+                                <span>
+                                    MongoDB
+                                </span>
+
+                                <span>
+                                    Figma
+                                </span>
+
+                                <span>
+                                    Github
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 4 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="arangkadarent.png"
+                                alt="ArangKada Rent vehicle rental system"
+                            >
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-category">
+                                Web Development
+                            </div>
+
+                            <div class="project-date">
+                                NOVEMBER 2025
+                            </div>
+
+                            <h3>
+                                ArangKada Rent
+                            </h3>
+
+                            <div class="project-role">
+                                Front-end Developer | UI/UX Designer | System Analyst
+                            </div>
+
+                            <p>
+                                Designed and developed a web-based vehicle rental
+                                system focused on vehicle management, booking,
+                                customer management, and rental operations.
+                                Contributed to the interface design, front-end
+                                implementation, and database integration.
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>
+                                    HTML
+                                </span>
+
+                                <span>
+                                    CSS
+                                </span>
+
+                                <span>
+                                    JavaScript
+                                </span>
+
+                                <span>
+                                    Node.js
+                                </span>
+
+                                <span>
+                                    MongoDB
+                                </span>
+
+                                <span>
+                                    MongoDB Atlas
+                                </span>
+
+                                <span>
+                                    Figma
+                                </span>
+
+                                <span>
+                                    Github
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 5 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="escapade.png"
+                                alt="Engkanto Escapade game project"
+                            >
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-category">
+                                Game Development
+                            </div>
+
+                            <div class="project-date">
+                                NOVEMBER 2024
+                            </div>
+
+                            <h3>
+                                Engkanto Escapade
+                            </h3>
+
+                            <div class="project-role">
+                                Project Manager | Database Administrator
+                            </div>
+
+                            <p>
+                                Led the development of an endless-runner game
+                                inspired by Filipino folklore while coordinating
+                                project tasks, organizing team activities, and
+                                collaborating with members throughout development.
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>
+                                    Project Management
+                                </span>
+
+                                <span>
+                                    Game Development
+                                </span>
+
+                                <span>
+                                    Unity
+                                </span>
+
+                                <span>
+                                    SQL
+                                </span>
+
+                                <span>
+                                    MySQL
+                                </span>
+
+                                <span>
+                                    Github
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TRAINING
+        ========================= -->
+
+        <section id="training" class="reveal">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        Training & Activities
+                    </span>
+
+                    <h2>
+                        Learning & Development
+                    </h2>
+
+                    <p>
+                        Selected academic activities, seminars, and hands-on
+                        learning experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <!-- TRAINING 1 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            MARCH 2026
+                        </div>
+
+                        <h3>
+                            Tech Summit
+                        </h3>
+
+                        <p>
+                            Learned fundamental Power BI concepts and data
+                            visualization techniques through a session led by
+                            a Data Analyst. Also exhibited RentifyPro as part
+                            of the capstone project presentation.
+                        </p>
+
+                    </div>
+
+
+                    <!-- TRAINING 2 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            OCTOBER 2025
+                        </div>
+
+                        <h3>
+                            TechTalk: A Peek into Business Programming –
+                            Introduction to SAP
+                        </h3>
+
+                        <p>
+                            Gained foundational knowledge of SAP and its
+                            applications in business programming and
+                            organizational processes.
+                        </p>
+
+                    </div>
+
+
+                    <!-- TRAINING 3 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            ACADEMIC TRAINING
+                        </div>
+
+                        <h3>
+                            Python Alchemy: Brewing Magic and Code
+                        </h3>
+
+                        <p>
+                            Learned fundamental Python programming concepts
+                            and explored the basics of programming through
+                            hands-on academic training.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section id="contact" class="reveal">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        Contact
+                    </span>
+
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+                    <p>
+                        Feel free to connect with me for internship,
+                        project, or professional opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-container">
+
+                    <div class="contact-grid">
+
+
+                        <!-- EMAIL -->
+
+                        <a
+                            href="mailto:abegail.p.zarate@gmail.com"
+                            class="contact-card"
+                        >
+
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <h3>
+                                Email
+                            </h3>
+
+                            <p>
+                                abegail.p.zarate@gmail.com
+                            </p>
+
+                        </a>
+
+
+                        <!-- LINKEDIN -->
+
+                        <a
+                            href="https://www.linkedin.com/in/abegail-zarate/"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-card"
+                        >
+
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+
+                            <h3>
+                                LinkedIn
+                            </h3>
+
+                            <p>
+                                linkedin.com/in/abegail-zarate/
+                            </p>
+
+                        </a>
+
+
+                        <!-- GITHUB -->
+
+                        <a
+                            href="https://github.com/abegailzarate"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-card"
+                        >
+
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+
+                            <h3>
+                                GitHub
+                            </h3>
+
+                            <p>
+                                github.com/abegailzarate
+                            </p>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Abegail P. Zarate. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("show");
+
+            const isOpen = navLinks.classList.contains("show");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            menuBtn.innerHTML = isOpen
+                ? '<i class="fas fa-xmark"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+
+        /* CLOSE MOBILE MENU */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("show");
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuBtn.innerHTML =
+                        '<i class="fas fa-bars"></i>';
+                });
+
+            });
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            revealElements.forEach(element => {
+
+                const rect =
+                    element.getBoundingClientRect();
+
+                if (
+                    rect.top <
+                    window.innerHeight - 100
+                ) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+
+        /* =========================
+           ACTIVE NAVIGATION
+        ========================= */
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navItems =
+            document.querySelectorAll(
+                ".nav-links a:not(.resume-nav)"
+            );
+
+
+        function updateActiveNav() {
+
+            let current = "home";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+                if (
+                    window.scrollY >= sectionTop
+                ) {
+                    current = section.id;
+                }
+
+            });
+
+
+            navItems.forEach(link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") ===
+                    "#" + current
+                );
+
+            });
+
+        }
+
+
+        /* =========================
+           SCROLL EVENTS
+        ========================= */
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                revealOnScroll();
+                updateActiveNav();
+
+            },
+            { passive: true }
+        );
+
+
+        /* =========================
+           INITIAL LOAD
+        ========================= */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                revealOnScroll();
+                updateActiveNav();
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
